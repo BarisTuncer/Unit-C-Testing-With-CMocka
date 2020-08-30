@@ -1,5 +1,6 @@
 project(testingWithCMocka)
 
+# helper function to add a test which will be used below.
 function(target_add_test TARGET_NAME TARGET_BASE_LIB TARGET_SOURCE)
     # add the test executable
     add_executable(${TARGET_NAME} ${TARGET_SOURCE})
