@@ -5,6 +5,7 @@
 #include <cmocka.h>
 #include "stack.h"
 
+#define UNUSED(x) (void)(x)
 #define STRESS_TEST_ITERATIONS (10)
 
 /* Declare the variables your tests want to use. */
@@ -14,7 +15,7 @@ static int i;
 /** These functions will be used to initialize
    and clean resources up after each test run 
 */
-int setup (void ** state){
+int setup (void **state){
     UNUSED(state);
     s = stack_create();
     i = 0;
@@ -22,7 +23,7 @@ int setup (void ** state){
     return 0;
 }
 
-int teardown (void ** state){
+int teardown (void **state){
     UNUSED(state);
     stack_destroy(s);
     return 0;
@@ -32,11 +33,10 @@ int teardown (void ** state){
  * assert_* versions generate fatal failures when they fail, and abort the current function. 
  */
 
-void test1(void **state){
+void test1(){
     //stack_destroy(s);
     //assert_ptr_equal(s, nullptr);  // this should fail. free does not mean null !
     //s = stack_create();
-     UNUSED(state);
     assert_non_null(s);
     stack_push(s, 1);
     s = stack_create();
@@ -55,9 +55,8 @@ void test1(void **state){
     assert_int_equal(stack_pop(s), STACK_EMPTY);
 }
 
-void test2(void **state){
+void test2(){
     /* let's do some stress testing */
-    UNUSED(state);
     for(i = 0; i < STRESS_TEST_ITERATIONS; i++) {
         stack_push(s, i);
     }

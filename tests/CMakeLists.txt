@@ -9,7 +9,7 @@ function(target_add_test TARGET_NAME TARGET_BASE_LIB TARGET_SOURCE)
     # add adress sanitizer for memory check
     target_compile_options(${TARGET_NAME} PUBLIC "-fsanitize=address" "-g" "-O1" "-fno-omit-frame-pointer") 
     # link the test target with the sanitizer lib (should be first), mocka lib, and the lib that it tests. lib has been created before!
-    target_link_libraries(${TARGET_NAME} asan ${TEST_BASE_LIB} cmocka) 
+    target_link_libraries(${TARGET_NAME} asan ${TARGET_BASE_LIB} cmocka) 
     # now add test into the cmake tests
     add_test(NAME ${TARGET_NAME} COMMAND ${TARGET_NAME})
     # set some test properties which will be used by CMake
