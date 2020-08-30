@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.18)
+project(UnitCTestingWithCMocka)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+add_compile_options(-Wall -Wextra)
+add_subdirectory(labs)
+add_subdirectory(tests)
+enable_testing()
