@@ -14,11 +14,11 @@
 #include "cmocka.h"
 #include "i2c.h"
 
-/* redefinitons/wrapping */
 
-int open_i2c(uint8_t i2c_addr)
-{
-    check_expected(i2c_addr);
+
+int __wrap_open_i2c(uint8_t i2c_bus);
+int __wrap_open_i2c(uint8_t i2c_bus){
+        check_expected(i2c_bus);
     return mock();
 }
 
@@ -35,8 +35,8 @@ void test_do_something_failure(void **state)
     (void) state; /* unused */
     int ret;
 
-    expect_value(open_i2c, i2c_addr, 42);
-    will_return(open_i2c, -1);
+    expect_value(__wrap_open_i2c, i2c_bus, 42);
+    will_return( __wrap_open_i2c, -1);
 
     ret = do_something();
     assert_int_equal(-1, ret);
@@ -47,8 +47,8 @@ void test_do_something_success(void **state)
     (void) state; /* unused */
     int ret;
 
-    expect_value(open_i2c, i2c_addr, 42);
-    will_return(open_i2c, 42);
+    expect_value(__wrap_open_i2c, i2c_bus, 42);
+    will_return(__wrap_open_i2c, 42);
 
     expect_value(__wrap_close, fd, 42);
     will_return(__wrap_close, 0);

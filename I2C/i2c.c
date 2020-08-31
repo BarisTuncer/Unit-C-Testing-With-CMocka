@@ -9,7 +9,8 @@
 
 #define PATH_BUFFER_SIZE 32
 
-__attribute__((weak)) // open_i2c will be redefined (faked) in test_do_something)
+// wrapping open_i2c won't work :(
+//__attribute__((weak)) // open_i2c will be redefined  in test_do_something
 int open_i2c(uint8_t i2c_bus)
 {
     char path[PATH_BUFFER_SIZE];

@@ -29,13 +29,6 @@ int __wrap_open(const char *path, int flags, int mode)
     return mock();
 }
 
-int __wrap_close(int fd);
-int __wrap_close(int fd)
-{
-    check_expected(fd);
-    return mock();
-}
-
 
 /* open_i2c tests */
 
