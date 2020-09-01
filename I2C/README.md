@@ -5,7 +5,7 @@
 [test_do_something]: test_do_something.c
 [CMakeLists]: CMakeLists.txt
 
-In this part, I will consider [MicroJoe]'s 2 beautiful examples. I converted his CMakeLists for Modern Cmake and I also have a comment on his second [test_do_domething] test.
+In this part, I will consider [MicroJoe]'s 2 beautiful examples. I converted his CMakeLists for Modern Cmake and I also have a comment on his second [test_do_something] test.
 
 1. [test_open_i2c] This is an example of mocking system library function `open` inside `open_i2c`. During the test, there is call to mocked `open` via `__wrap_open` as well as real `open` via `__real_open`. For this we need
 * `target_link_options(test_do_something PRIVATE "-Wl,--wrap=open_i2c")` in [CMakeLists]
