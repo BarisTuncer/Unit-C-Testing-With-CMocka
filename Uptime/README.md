@@ -1,8 +1,8 @@
-# The uptime mock example from 
+# The uptime mock example 
 
 [proc_uptime.c]: proc_uptime.c
 [calc_uptime.c]: calc_uptime.c
-[test_calc_uptime.c]: test_calc_uptime
+[test_calc_uptime.c]: test_calc_uptime.c
 [Andreas Scheider]: https://cryptomilk.org/
 
 Mocking example and its explanation below is mostly by [Andreas Scheider] who is the maintainer and core developer of `cmocka`
