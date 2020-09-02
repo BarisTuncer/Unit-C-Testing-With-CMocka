@@ -1,5 +1,5 @@
 project(Uptime)
-add_library(proc_uptime proc_uptime.c)
+add_library(proc_uptime SHARED proc_uptime.c)
 
 if(ENABLE_TESTING)
     message(STATUS "Test executable for test_calc_uptime will be created")
@@ -8,6 +8,22 @@ if(ENABLE_TESTING)
     target_link_libraries(test_calc_uptime calc_uptime proc_uptime cmocka)
     add_test(test_calc_uptime ${CMAKE_CURRENT_BINARY_DIR}/test_calc_uptime)
     target_link_options(test_calc_uptime PRIVATE "-Wl,--wrap=uptime")
+    if(ENABLE_CODE_COVERAGE)
+        #[[ now include code coverage
+        Example use od code coverage
+            set(COVERAGE_EXCLUDES "dir1/*")
+            setup_target_for_coverage_gcovr_html(
+                NAME coverage
+                EXECUTABLE testrunner
+                BASE_DIRECTORY "${PROJECT_SOURCE_DIR}/src"
+                EXCLUDE "dir2/*")
+        ]]
+        setup_target_for_coverage_gcovr_html(
+            NAME test_calc_uptime_coverage  
+            EXECUTABLE test_calc_uptime
+            BASE_DIRECTORY "${PROJECT_SOURCE_DIR}/Uptime"
+        )
+    endif()
 else()
     add_executable(calc_uptime calc_uptime.c)
     target_link_libraries(calc_uptime proc_uptime)
