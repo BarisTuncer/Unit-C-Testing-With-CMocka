@@ -18,16 +18,3 @@ endfunction()
 
 target_add_test(test_state state ${PROJECT_SOURCE_DIR}/test_state.c)
 target_add_test(test_stack stack ${PROJECT_SOURCE_DIR}/test_stack.c)
-
-#[[
-foreach(test ${tests})
-    set(name)
-    get_filename_component(name ${test} NAME_WE) 
-    add_executable("test_${name}" ${test})
-    target_include_directories("test_${name}" PUBLIC ${CMAKE_SOURCE_DIR}/labs/include)
-    target_compile_options("test_${name}" PUBLIC "-fsanitize=address" "-g" "-O1" "-fno-omit-frame-pointer") 
-    target_link_libraries("test_${name}" asan ${name} cmocka) 
-    add_test(NAME "test_${name}" COMMAND "test_${name}")
-    set_tests_properties("test_${name}" PROPERTIES TIMEOUT 5)
-endforeach()
-]]
