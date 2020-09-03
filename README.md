@@ -7,6 +7,9 @@
 
 This tutorial describes unit testing pure `C` code with **[cmocka]**.
 
+NOTE: After this simple tutorial you should see the examples in **https://git.cryptomilk.org/projects/cmocka.git/tree/example**
+to be able to use [cmocka] in full power! )
+
 1. `master` branch gives 2 examples of basics of testing with `cmocka`
 2. `mocking-examples` branch gives 3 non-trivial examples of mocking with `cmocka`.
 
