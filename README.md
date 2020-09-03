@@ -3,11 +3,13 @@
 [cmocka]: https://api.cmocka.org/
 [CMakeLists]: tests/CMakeLists.txt
 [AddressSanitizer]: https://clang.llvm.org/docs/AddressSanitizer.html
+[calculator_test]: https://git.cryptomilk.org/projects/cmocka.git/tree/example/calculator_test.c
 **[cmocka]** is a an elegant unit testing framework for `C` with support for mock objects. It only requires the standard `C` library, unit testing `C` library with mock support.
 
 This tutorial describes unit testing pure `C` code with **[cmocka]**.
 
-NOTE: After this simple tutorial you should see the examples in **https://git.cryptomilk.org/projects/cmocka.git/tree/example**
+NOTE: After this simple introductive tutorial you should see the examples in **https://git.cryptomilk.org/projects/cmocka.git/tree/example**
+especially **[calculator_test]**.
 to be able to use [cmocka] in full power! )
 
 1. `master` branch gives 2 examples of basics of testing with `cmocka`
