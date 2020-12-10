@@ -2,6 +2,7 @@
 #include <stddef.h>
 #include <setjmp.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <cmocka.h>
 #include "stack.h"
 
