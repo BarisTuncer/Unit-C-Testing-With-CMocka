@@ -14,6 +14,7 @@ endif()
 
 option(ENABLE_CODE_COVERAGE "Perform coverage report after build" ON)
 if(ENABLE_CODE_COVERAGE)
+    message(STATUS "Coverage executables will be generated")    
     set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake-modules)
     include(CodeCoverage)
     # the prov below is defined in CodeCoverage, manupulate when needed
