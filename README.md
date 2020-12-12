@@ -18,9 +18,16 @@ In this part of the tutorial, let's add code-coverage into our tests.
 [Lars Bilke]: https://github.com/bilke
 # About **[gcovr]**
 [gcovr] provides a utility for managing the use of the GNU `gcov` utility and generating summarized code coverage results. 
-obtain gcovr. Follow the steps in the web page of [govr] for installation. It has a simple the tutorial to learn about code coverage
+To obtain `gcovr`, follow the steps in the web page of **[govr]** for installation. It has a simple the tutorial to learn about code coverage
+(You may also need to install `lcov` : `sudo dnf install lcov` which will also install `genhtml`)
+
 
 # A useful script by **[Lars Bilke]**
+
+  Build a Debug build:
+  1.  cmake -DCMAKE_BUILD_TYPE=Debug ..
+  2.  make
+  3.  make my_coverage_target --> this will point out the html file to look at
 
 
 
