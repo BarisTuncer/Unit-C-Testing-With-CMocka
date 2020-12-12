@@ -8,9 +8,8 @@
 #include <stdarg.h>
 #include <stddef.h>
 #include <setjmp.h>
-
+#include <stdint.h>
 #include <stdio.h>
-
 #include "cmocka.h"
 #include "i2c.h"
 
