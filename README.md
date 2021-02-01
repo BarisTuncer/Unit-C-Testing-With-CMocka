@@ -11,6 +11,7 @@ This tutorial describes unit testing pure `C` code with **[cmocka]**.
 Remove old version of cmake:
 
 `sudo apt purge --auto-remove cmake`
+
 Obtain a copy of the signing key:
 
 `wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null`
@@ -20,12 +21,15 @@ Add the repository to your sources list:
 a. For Ubuntu Focal Fossa (20.04)
 
 `sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ focal main'`     
+
 b. For Ubuntu Bionic Beaver (18.04)
 
 `sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'`
+
 c. For Ubuntu Xenial Xerus (16.04)
 
 `sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ xenial main'`
+
 Update and install
 
 `sudo apt update`
