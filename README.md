@@ -7,6 +7,32 @@
 **[cmocka]** is a an elegant unit testing framework for `C` with support for mock objects. It only requires the standard `C` library, unit testing `C` library with mock support.
 
 This tutorial describes unit testing pure `C` code with **[cmocka]**.
+## How to install CMake
+Remove old version of cmake:
+
+`sudo apt purge --auto-remove cmake`
+Obtain a copy of the signing key:
+
+`wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null`
+
+Add the repository to your sources list:
+
+a. For Ubuntu Focal Fossa (20.04)
+
+`sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ focal main'`     
+b. For Ubuntu Bionic Beaver (18.04)
+
+`sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'`
+c. For Ubuntu Xenial Xerus (16.04)
+
+`sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ xenial main'`
+Update and install
+
+`sudo apt update`
+`sudo apt install cmake`
+
+## How to install adress sanitizer library:
+`sudo apt install libasan5`
 
 ## How to install CMocka
 1. wget http://git.cryptomilk.org/projects/cmocka.git/snapshot/master.tar.gz
