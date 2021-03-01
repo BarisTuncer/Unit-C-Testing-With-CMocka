@@ -38,7 +38,7 @@ Update and install
 ## How to install adress sanitizer library:
 `sudo apt install libasan5`
 
-## How to install CMocka
+## How to install CMocka ( Linux )
 1. wget http://git.cryptomilk.org/projects/cmocka.git/snapshot/master.tar.gz
 2. tar -xvf master
 3. cd master
@@ -59,6 +59,33 @@ It means that program loader cannot find the cmocka shared library file. You nee
 4. Now check whether `/usr/local/lib64` is in `etc/ld.so.conf`. Note that some distros, like my Fedora Workstation, have an `/etc/ld.so.conf.d` directory with and `.conf` file is in that directory. In my case it is `/etc/ld.so.conf.d/libiscsi-x86_64.conf`.
 5. Add `/usr/local/lib` (or `/usr/local/lib64`) into the `.conf` file. So in my case I add `/usr/local/lib64` into `/etc/ld.so.conf.d/libiscsi-x86_64.conf` by opening my `emacs` editor in `sudo` mode.
 6. Run `sudo ldconfig`.
+
+## How to install CMocka ( Windows )
+
+1.Invoke-WebRequest https://cmocka.org/files/1.1/cmocka-1.1.5.tar.xz -UseBasicParsing -OutFile temp.tar.xz
+2.
+3.7z x temp.tar.xz
+5.
+6.7z x temp.tar
+7.cd cmocka-1.1.5
+8.
+9.mkdir build
+10
+11..cd build
+12.
+13.cmake -G "Visual Studio 16 2019" -DCMAKE_BUILD_TYPE=Debug ..
+14.
+15.cmake --build . --config Release --target install
+
+Now it is installed and the location for `cmocka.h` is `C:\Program Files (x86)\cmocka\include`.
+
+
+```
+if(MSVC)   
+SET(CMOCKA_INCLUDE "C:/Program Files (x86)/cmocka")
+include_directories(${CMOCKA_INCLUDE})
+endif()
+```
 
 
 **NOTE**: After this simple introductive tutorial you should see the examples in **https://git.cryptomilk.org/projects/cmocka.git/tree/example** especially **[calculator_test]** to be able to use [cmocka] in full power! )
