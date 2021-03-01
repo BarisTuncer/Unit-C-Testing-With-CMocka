@@ -7,7 +7,7 @@
 **[cmocka]** is a an elegant unit testing framework for `C` with support for mock objects. It only requires the standard `C` library, unit testing `C` library with mock support.
 
 This tutorial describes unit testing pure `C` code with **[cmocka]**.
-## How to install CMake
+## How to install CMake (Linux)
 Remove old version of cmake:
 
 `sudo apt purge --auto-remove cmake`
@@ -35,7 +35,7 @@ Update and install
 `sudo apt update`
 `sudo apt install cmake`
 
-## How to install adress sanitizer library:
+## How to install adress sanitizer library (Linux)
 `sudo apt install libasan5`
 
 ## How to install CMocka ( Linux )
