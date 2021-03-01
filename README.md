@@ -62,28 +62,21 @@ It means that program loader cannot find the cmocka shared library file. You nee
 
 ## How to install CMocka ( Windows )
 
-1.Invoke-WebRequest https://cmocka.org/files/1.1/cmocka-1.1.5.tar.xz -UseBasicParsing -OutFile temp.tar.xz
-2.
-3.7z x temp.tar.xz
-5.
-6.7z x temp.tar
-7.cd cmocka-1.1.5
-8.
-9.mkdir build
-10
-11..cd build
-12.
-13.cmake -G "Visual Studio 16 2019" -DCMAKE_BUILD_TYPE=Debug ..
-14.
-15.cmake --build . --config Release --target install
+1. Invoke-WebRequest https://cmocka.org/files/1.1/cmocka-1.1.5.tar.xz -UseBasicParsing -OutFile temp.tar.xz
+2. 7z x temp.tar.xz
+3. 7z x temp.tar
+4. cd cmocka-1.1.5
+5. mkdir build
+6. cd build
+7. cmake -G "Visual Studio 16 2019" -DCMAKE_BUILD_TYPE=Debug ..
+8. cmake --build . --config Release --target install
 
 Now it is installed and the location for `cmocka.h` is `C:\Program Files (x86)\cmocka\include`.
 
-
 ```
 if(MSVC)   
-SET(CMOCKA_INCLUDE "C:/Program Files (x86)/cmocka")
-include_directories(${CMOCKA_INCLUDE})
+    SET(CMOCKA_INCLUDE "C:/Program Files (x86)/cmocka/include")
+    include_directories(${CMOCKA_INCLUDE})
 endif()
 ```
 
